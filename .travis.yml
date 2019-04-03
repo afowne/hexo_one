@@ -19,7 +19,7 @@ after_script:
   - git config user.email "afowne@gmail.com"
   - git add .
   - git commit -m "Update Readme docs to static html with TRAVIS-CI."
-  - git push --quiet "https://${gh_token}@${GH_REF}" hexo-gen:hexo-gen
+  - git push --force --quiet "https://${gh_token}@${GH_REF}" hexo-gen:hexo-gen
 # E: Build LifeCycle
 
 branches:
