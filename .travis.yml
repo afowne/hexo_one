@@ -14,11 +14,12 @@ script:
 after_script:
   - cd ./public
   - git init
+  - git checkout -b hexo-gen
   - git config user.name "Afowne"
   - git config user.email "afowne@gmail.com"
   - git add .
   - git commit -m "Update Readme docs to static html with TRAVIS-CI."
-  - git push --force --quiet "https://${gh_token}@${GH_REF}" hexo-gen:hexo-gen
+  - git push --quiet "https://${gh_token}@${GH_REF}" hexo-gen:hexo-gen
 # E: Build LifeCycle
 
 branches:
