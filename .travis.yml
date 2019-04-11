@@ -30,5 +30,5 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 after_success:
-- ssh -tt -p 26444 root@104.243.16.173 ./deploy-to-vps.sh
+- ssh -p 26444 root@104.243.16.173 ./deploy-to-vps.sh
 #- sshpass -e ssh -P 29134 -o stricthostkeychecking=no root@104.243.16.173 "sh ./deploy-to-vps.sh"
