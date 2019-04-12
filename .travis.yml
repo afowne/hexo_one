@@ -1,7 +1,7 @@
 language: node_js
 node_js: stable
 addons:
-  ssh_known_hosts: ${host_ip}
+  ssh_known_hosts: "${host_ip}"
   apt:
     packages:
     - sshpass
@@ -27,3 +27,6 @@ env:
   - GH_REF: github.com/afowne/hexo_one.git
 after_success:
 - ssh -p ${host_port} -o StrictHostKeyChecking=no root@${host_ip} < deploy-to-vps.sh
+before_install:
+- openssl aes-256-cbc -K $encrypted_2e3e2869fa2d_key -iv $encrypted_2e3e2869fa2d_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
